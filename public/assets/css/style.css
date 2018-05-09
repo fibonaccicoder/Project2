@@ -1,0 +1,53 @@
+.grid-container {
+    background-image: url();
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    /* background-color: rgb(197, 229, 255); */
+    padding: 10px;
+
+}
+
+.grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    /* font-size: 30px; */
+    text-align: center;
+}
+
+
+
+h2,h3,h4{
+    font-family: 'Berkshire Swash',cursive; 
+}
+label{
+    font-family: 'inconsolata',monospace;
+}
+
+/* needs to be at the bottom of css pg*/
+/* need to link colors to btns */
+.btn:hover{
+    background-image:none;
+    background-color:#a200ff;
+}
+.btn:hover{
+    background-image:none;
+    background-color:#0011ff;
+}
+.btn:hover{
+    background-image:none;
+    background-color:#5aafff;
+}
+.btn:hover{
+    background-image:none;
+    background-color:#5bbd4e;
+}
+.btn:hover{
+    background-image:none;
+    background-color:#fff700;
+}
+.btn:hover{
+    background-image:none;
+    background-color:#ff8400;
+}
