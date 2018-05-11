@@ -1,0 +1,110 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 id="color-override">H1 Title</h1>
+        <p id="color-override">P text</p>
+        <br>
+        <h2 id="color-override">Create a New Task</h2>
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newtask" id="color-override">New Task:</label>
+                    <input type="text" id="newtask" name="task">
+                    <br>
+                    <label for="category" id="color-override">Category:</label>
+                    <input type="text" id="category" name="category">
+                    <br>
+                    <label for="value" id="color-override">Value:</label>
+                    <input type="number" min="1" max="10" id="value" name="quantity">
+                    <br>
+                    <label for="time" id="color-override">Estimated Time:</label>
+                    <input type="number" min="1" max="60" id="time" name="time">
+                    <br>
+                    <button type="submit" class="btn btn-success" id="addtask">
+                        <span class="fa fa-thumbs-up"></span>
+                    </button>
+                </div>
+            </form>
+        </panel>
+    </div>
+    <!-- /jumbotron -->
+
+    <div class="row">
+
+        <!-- Tasks to do -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead">
+                    <strong>New Tasks</strong>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each tasks}} {{#unless completed}}
+                        <span>
+                            <strong> {{this.id}} - {{this.task_name}} - {{this.category}} </strong>
+                        </span>
+                        <button type="button" class="complete btn btn-warning" id="complete" data-id="{{this.id}}" data-newCompleted="{{completed}}">
+                            <span class="fa fa-check"></span>
+                        </button>
+                        <hr> {{/unless}} {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Tasks -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="righthead">
+                    <strong>Completed Tasks</strong>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each tasks}} {{#if completed}}
+                        <span>
+                            <strong> {{this.id}} - {{this.task_name}} - {{this.category}} </strong>
+                        </span>
+                        <button type="button" class="remove btn btn-danger" id="remove" data-id="{{this.id}}">
+                            <span class="fa fa-trash"></span>
+                        </button>
+                        <hr> {{/if}} {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="inputModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title">
+                            <strong>Whoa, there!</strong>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <img id="modal-image" src="/img/burger-mess.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <div class="modal-message">
+                            <h4>
+                                <i>We know you're hungry, but slow down and name the burger first!</i>
+                            </h4>
+                        </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <span class="fa fa-check"></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- End of Modal Content -->
+            </div>
+        </div>
+        <!-- End of Modal -->
+
+    </div>
+    <!-- /row -->
+
+</div>
+<!-- /container -->

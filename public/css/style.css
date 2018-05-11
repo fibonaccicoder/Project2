@@ -1,0 +1,121 @@
+.grid-container {
+    background-image: url();
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    /* background-color: rgb(197, 229, 255); */
+    padding: 10px;
+
+}
+
+.grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border: 1px outset rgba(145, 145, 145, 0.8);
+    padding: 20px;
+    /* font-size: 30px; */
+    text-align: center;
+}
+
+.home{
+    background-image: url(mandala.png);
+    background-position: center;
+    /* background-size: ; */
+    background-repeat:no-repeat;
+}
+.index{
+    background-image: url(mandalaTopHalf.png);
+    left:100px ;
+    /* background-size: ; */
+    background-repeat:no-repeat;
+
+}
+.login{
+    background-image: url(mandalaBttmHalf.png);
+}
+
+h1,h2,h3,h4{
+    font-family: 'Berkshire Swash',cursive; 
+}
+p{
+    font-family: 'Oxygen',sans-serif;
+}
+.jumbotron{
+    background-color: rgba(0, 255, 255, 0.261);
+    width:1000px;
+}
+.stuff{
+    position:center;
+}
+#footer{
+    width:1200px;
+    background-color: #26a69a;
+    float: auto;
+    margin-top: 25px;
+}
+/* #silence{
+    /* width: 180px;
+    height:100px;
+    padding-left: 100px;
+    padding-top: 20px; */
+/* }
+#affirmations{
+  
+} */
+/* #visualization{
+     width: 180px;
+    height:100px;
+    padding-left: 100px;
+    padding-top: 20px; 
+} */
+/* #exercise{
+    
+} */
+/* #read{
+     width: 180px;
+    height:100px;
+    padding-left: 100px;
+    padding-top: 20px; 
+} */
+/* #scriber{ 
+
+} */
+/* needs to be at the bottom of css pg*/
+/* need to link colors to btns */
+/* home pg */
+#morning:hover{
+    background-image:none;
+    background-color:#fff700;
+}
+#daily:hover{
+    background-image:none;
+    background-color:#ffa600;
+}
+#evening:hover{
+    background-image:none;
+    background-color:#ff0000;
+}
+/* index pg */
+#silance:hover{
+    background-image:none;
+    background-color:#a200ff;
+}
+#affirmations:hover{
+    background-image:none;
+    background-color:#0011ff;
+}
+#visualization:hover{
+    background-image:none;
+    background-color:#5aafff;
+}
+#exercise:hover{
+    background-image:none;
+    background-color:#5bbd4e;
+}
+#read:hover{
+    background-image:none;
+    background-color:#fff700;
+}
+#scribe:hover{
+    background-image:none;
+    background-color:#ff8400;
+}

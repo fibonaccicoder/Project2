@@ -1,16 +1,5 @@
+-- Drops the "lifecoach" database if it exists currently --
+DROP DATABASE IF EXISTS lifecoach_db;
 
-
-CREATE DATABASE unfuckers;
-
-USE unfuckers;
-
-CREATE TABLE unfuckers
-(
-    id INT NOT NULL
-    AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR
-    (100) NOT NULL,
-    task VARCHAR
-    (100),
-    reward INT 
-);
+-- Creates the "lifecoach" database --
+CREATE DATABASE lifecoach_db;

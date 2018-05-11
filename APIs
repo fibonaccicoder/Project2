@@ -1,0 +1,30 @@
+APIs to use
+
+Pomodoryo
+
+
+//Google Calendar 
+
+//API key
+AIzaSyDKlA3xFo6VjVYKyVHk3W6SjdcHAmT2B7A
+
+//OAuth client ID
+356153490855-pbacdntfpk7dcj2se5pqidjerm2s8i65.apps.googleusercontent.com
+
+//OAuth client secret
+fPgStps4yU7PGre2zH9yavVG
+
+//must use http://localhost:8000
+
+
+
+//idk if these are necessary
+
+//server key
+AIzaSyD7dht_-Rl6bCZNQc8HAnKNh-ug5wWPJPs
+
+//browser key
+AIzaSyDSwQe3shybIkeT_l5Gu1QREykPycIhk3o 
+
+//client id 
+1096163461499-66pslf98ucs035qhppfa1b57j6l233ko.apps.googleusercontent.com
