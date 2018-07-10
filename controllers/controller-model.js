@@ -4,64 +4,85 @@ var express = require("express");
 var router = express.Router();
 var db = require("../models");
 
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/signin');
+}
+
 // *** Routes
 // =============================================================
+
+// ========== Global Displays ==========
 // Index Page (render all burgers to html)
-router.get("/", function (req, res) {
-    db.Task.findAll({}).then(function(results) {
+router.get("/", isLoggedIn, function (req, res) {
+    db.Task.findAll({}).then(function (results) {
         var hbsObject = {
             tasks: results
         };
         // console.log(hbsObject);
-        res.render("index", hbsObject);
-
-        // !!! Only use line below to display WITHOUT data.
-        // res.render("index");
+        res.render("dashboard", hbsObject);
     });
 });
 
-// Add new task to the db.
-router.post("/api/tasks", function (req, res) {
-    db.Task.create({
-        task_name: req.body.task_name,
-        category: req.body.category,
-        value: req.body.value,
-        estimated_time: req.body.estimated_time
-    }).then(function(results) {
+// Pull the user's name to display in the navbar
+router.get("/userinfo", isLoggedIn, function (req, res) {
+    db.user.findOne({
+        where: {
+            id: req.user.id
+        }
+    })
+    .then(function (data) {
+        // console.log(data);
+        console.log(data.dataValues.firstname);
+        return res.json(data.dataValues.firstname);
+    });
+});
+// =============================================================
+
+// ========== Exercise Displays ==========
+// Request to find sum of exercise points
+router.get("/exercise/points", isLoggedIn, function (req, res) {
+    db.Task.sum("value", {
+        where: {
+            category: "Exercise",
+            completed: 1,
+            userId: req.user.id
+        }
+    }).then(function (results) {
+        // Send the data to be retrieved by model.js document.ready
         return res.json(results);
+        console.log("Exercise points: " + results);
     });
 });
 
-// Set task completed status to true.
-router.put("/api/tasks/:id", function(req, res) {
-    db.Task.update({
-        completed: req.body.completed
-    }, {where: {
-        id: req.params.id
-    }}).then(function(dbTask) {
-        if (dbTask.changedRows === 0) {
-            // If no rows were changed, then the ID must not exist, so 404.
-            return res.status(404).end();
-        } else {
-            res.json(dbTask);
-            res.status(200).end();
+// Check to see if any exercise tasks remain incomplete
+router.get("/exercise/alltasks", isLoggedIn, function (req, res) {
+    db.Task.findOne({
+        where: {
+            category: "Exercise",
+            completed: false,
+            userId: req.user.id
         }
+    }).then(function (data) {
+        return res.json(data);
     });
 });
+// =============================================================
 
-// Delete task from db.
-router.delete("/api/tasks/:id", function(req, res) {
-    db.Task.destroy({where: {
-        id: req.params.id
-    }}).then(function(results) {
-        if (results.changedRows === 0) {
-            // If no rows were changed, then the ID must not exist, so 404.
-            return res.status(404).end();
-        } else {
-            return res.json(results);
-            res.status(200).end();
+// ========== Reading Displays ==========
+// Request to find sum of reading points
+router.get("/reading/points", isLoggedIn, function (req, res) {
+    db.Book.sum("value", {
+        where: {
+            completed: 1,
+            userId: req.user.id
         }
+    }).then(function (results) {
+        // Send the data to be retrieved by model.js document.ready
+        return res.json(results);
+        console.log("Reading points: " + results);
     });
 });
-
+// =============================================================
 module.exports = router;

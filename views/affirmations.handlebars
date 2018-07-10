@@ -1,19 +1,30 @@
-<body id="cover">
+<body>
+    <!-- Navigation Bar -->
+    {{> navbar/navbar-block}}
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4" id="morning-tasks-title">Affirmations</h1>
-            <p id="lead">Meet today with full presence and power.</p>
+    <div class="container-fluid">
+
+        <div class="jumbotron text-center">
+            <h1 class="morning-tasks-title " id="title">Affirmations</h1>
+            <p id="affirmations-description"> They can be used to wire your brain for success in all areas of your life.</p>
             <hr id="my-4">
+            <p>Meet today with full presence and power by affirming your intentions and truths. Spend five minutes speaking
+                aloud an affirmation in the category of your greatest need today.</p>
             <br>
-
-            <br>
-            <p>
-                <span id="affirmations-container"></span>
-                {{!-- affirmations API?, vision board shit --}}
-            </p>
         </div>
+
+        <div class="row">
+            <div class="btn-group btn-group-justified">
+                <a href="#" id="success-btn" class="btn btn-primary">Success</a>
+                <a href="#" id="wealth-btn" class="btn btn-primary">Wealth</a>
+                <a href="#" id="health-btn" class="btn btn-primary">Health</a>
+                <a href="#" id="love-btn" class="btn btn-primary">Love</a>
+            </div>
+            <div id="affirmations-view" >
+                <!-- Affirmations displayed here on button click -->
+            </div>
+        </div>
+
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../models/visualization.js"></script> {{!-- #morning-tasks-title #vision-board-container #affirmations-container #lead --}}
+</body>

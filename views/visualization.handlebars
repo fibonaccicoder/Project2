@@ -1,19 +1,29 @@
-<body id="cover">
+<body>
+    <!-- Navigation Bar -->
+    {{> navbar/navbar-block}}
 
-    <div class="container">
+    <div class="container home">
+
         <div class="jumbotron">
-            <h1 class="display-4" id="visualization">Visualizations</h1>
+            <h1 class="display-4" id="title">Visualizations</h1>
             <p id="lead">Meet today with full presence and power.</p>
             <hr id="my-4">
             <br>
-
+            <p>Spend five minutes imagining with every fiber of your being what it will feel like when you attain each of your
+                desires. When you live from the space that all of your dreams are not only achievable, but unavoidable, your
+                neural network and biochemistry will reflect that, bringing about massive external results. </p>
             <br>
             <p>
-                <span id="vision-board-container"></span>
-                {{!-- instagram API cache, vision board shit --}}
+                <div id="vision-board-container">
+
+                </div>
+
+
             </p>
         </div>
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../models/visualization.js"></script>
+    {{!--
+    <script type="text/javascript" src="visualization.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+</body>

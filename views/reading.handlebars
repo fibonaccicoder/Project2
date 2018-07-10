@@ -1,0 +1,145 @@
+<body class="index">
+
+    <!-- Navigation Bar -->
+    {{> navbar/navbar-block}}
+
+    <div class="container-fluid">
+
+        <div class="jumbotron text-center">
+            <h1 class="morning-tasks-title " id="title">Reading</h1>
+            <p class="lead">
+                Reading is an integral part of the day to keep a healthy body and mind!
+            </p>
+            <hr id="my-4">
+            <div class="row">
+                <div class="col-6 text-center">
+                    <p id="points">Great job! So far, you have earned
+                        <span id="reading-sum"></span> points today!</p>
+                </div>
+                <div class="col-6 text-center">
+                    <p>To get all of your reading points, jump into a book for 20 minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Books to read -->
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="lefthead">
+                        <strong>Boost that Brain</strong>
+                    </div>
+                    <div class="panel-body">
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Complete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each books}}{{#unless completed}}
+                                <tr>
+                                    <td>{{this.title}}</td>
+                                    <td>{{this.author}}</td>
+                                    <td>
+                                        <button type="button" class="completeBook btn btn-warning" id="completeBook" data-id="{{this.id}}" data-newCompleted="{{completed}}">
+                                            <span class="fa fa-check"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {{/unless}} {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Books -->
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="lefthead">
+                        <strong>Read</strong>
+                    </div>
+                    <div class="panel-body">
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Book</th>
+                                    <th>Points</th>
+                                    <th>Time</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each books}} {{#if completed}}
+                                <tr>
+                                    <td>{{this.title}}</td>
+                                    <td>{{this.value}}</td>
+                                    <td>{{this.estimated_time}}</td>
+                                    <td>
+                                        <button type="button" class="removeBook btn btn-warning" id="removeBook" data-id="{{this.id}}">
+                                            <span class="fa fa-trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {{/if}} {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-2">
+                <!-- Placeholder -->
+            </div>
+
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" id="centerhead">
+                        <strong>Add a New Book</strong>
+                    </div>
+
+                    <div class="panel-body">
+                        <form class="create-form" id="addbook">
+                            <div class="form-group">
+                                <label for="newbook" id="color-override">New Book:</label>
+                                <input type="text" id="newbook" name="title">
+                                <br>
+                                <label for="newbookauthor" id="color-override">Author:</label>
+                                <input type="text" id="newbookauthor" name="author">
+                                <br>
+                                <input type="hidden" type="text" id="category" value="Books">
+                                <label for="value" id="color-override">Value:</label>
+                                <input type="number" min="1" max="10" id="value" name="value">
+                                <br>
+                                <label for="time" id="color-override">Estimated Time:</label>
+                                <input type="number" min="1" max="60" id="time" name="estimated_time">
+                                <br><br>
+                                <button type="submit" class="btn btn-success" id="addbook">
+                                    <span class="fa fa-thumbs-up"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <!-- Placeholder -->
+            </div>
+
+        </div>
+
+    </div>
+
+</body>

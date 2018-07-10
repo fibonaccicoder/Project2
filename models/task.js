@@ -1,9 +1,5 @@
-// *** Burger Model
-// =============================================================
-
 module.exports = function (sequelize, DataTypes) {
     var Task = sequelize.define("Task", {
-        // *** delete/change these to Tasks
         task_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -20,11 +16,24 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        estimated_time: {
-            type: DataTypes.INTEGER,
+        // estimated_time: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // }
+        frequency: {
+            type: DataTypes.STRING,
             allowNull: false
         }
-
     });
+
+    // Every task must have one user.
+    Task.associate = function (models) {
+        Task.belongsTo(models.user, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return Task;
 };

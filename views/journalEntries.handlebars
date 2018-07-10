@@ -1,0 +1,20 @@
+{{!-- \Project2\views\journalEntries.handlebars --}}
+
+<body>
+    <h1>Update the entry with an id of {{this.id}}</h1>
+
+    <form data-id="{{this.id}}" class="update-form">
+
+        <div class="form-group">
+            <label for="updatejournaltitle">Title:</label>
+            <input type="text" id="updatejournaltitle" name="title" value="{{this.title}}">
+        </div>
+
+        <div class="form-group">
+            <label for="updatejournalbody">Body:</label>
+            <textarea id="updatejournalbody" name="body" rows="8" cols="40">{{this.body}}</textarea>
+        </div>
+
+        <button type="submit">Update Journal Entry</button>
+    </form>
+</body>

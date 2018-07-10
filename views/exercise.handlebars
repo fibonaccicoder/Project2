@@ -1,0 +1,159 @@
+<body>
+    <!-- Navigation Bar -->
+    {{> navbar/navbar-block}}
+
+    <div class="container-fluid">
+
+        <div class="jumbotron  text-center">
+            <h1 class="morning-tasks-title " id="title">Exercise</h1>
+            <p class="lead">
+                Exercising is an integral part of the day to keep a healthy body and mind!
+            </p>
+            <hr id="my-4">
+            <div class "row">
+                <div class="col-8 text-center">
+                    <p id="points">Great job! So far, you have earned
+                        <span id="exercise-sum"></span> points today!
+                    </p>
+                </div>
+                <div class="col-8 text-center">
+                    <p>To get all of your exercise points, move your body for 20 minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Exercises to do -->
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" id="lefthead">
+                        <strong>Get Sweaty!</strong>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th>Exercise</th>
+                                    <th>Points</th>
+                                    <th>Frequency</th>
+                                    <th>Complete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {{#each tasks}}{{#unless completed}}
+                                <tr>
+                                    <td>{{this.task_name}}</td>
+                                    <td>{{this.value}}</td>
+                                    <td>{{this.frequency}}</td>
+                                    <td>
+                                        <button type="button" class="completeExercise btn btn-warning" id="completeExercise" data-id="{{this.id}}" data-newCompleted="{{completed}}">
+                                            <span class="fa fa-check"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {{/unless}}{{/each}}
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Completed Exercises -->
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" id="righthead">
+                        <strong>Today's Achievements:</strong>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th>Exercise</th>
+                                    <th>Points</th>
+                                    <th>Frequency</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {{#each tasks}}{{#if completed}}
+                                <tr>
+                                    <td>{{this.task_name}}</td>
+                                    <td>{{this.value}}</td>
+                                    <td>{{this.frequency}}</td>
+                                    <td>
+                                        <button type="button" class="removeExercise btn btn-danger" id="removeExercise" data-id="{{this.id}}">
+                                            <span class="fa fa-trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {{/if}}{{/each}}
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-2">
+                <!-- Placeholder -->
+            </div>
+
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" id="centerhead">
+                        <strong>Add a New Exercise Routine:</strong>
+                    </div>
+
+                    <div class="panel-body">
+                        <form class="create-form" id="addExercise">
+                            <div class="form-group">
+                                <label for="newtask">New Activity:</label>
+                                <input type="text" id="newtask" name="task_name" placeholder="Exercise Name">
+                                <br>
+                                <input type="hidden" type="text" id="category" value="Exercise">
+                                <label for="value">Value:</label>
+                                <input type="number" min="1" max="10" id="value" name="value" placeholder="Exercise Points (1-10)">
+                                <br>
+                                <label for="exercise-frequency">Frequency:</label>
+                                <select name="frequency" id="exercise-frequency" class="d-block" style="display: block;">
+                                    <option value="once">Once</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                </select>
+                                <br>
+                                <button type="submit" class="btn btn-success" id="addExercise">
+                                    <span class="fa fa-thumbs-up"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <!-- Placeholder -->
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
