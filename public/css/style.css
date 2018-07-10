@@ -1,244 +1,126 @@
-<<<<<<< HEAD
-.grid-container {
-    background-image: url();
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: auto auto auto;
-    /* background-color: rgb(197, 229, 255); */
-    padding: 10px;
-
+/* *****Navbar***** */
+#navbar-logo {
+    height: inherit;
+    position: relative;
+    bottom: 50%;
 }
 
-.grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    border: 1px outset rgba(145, 145, 145, 0.8);
-    padding: 20px;
-    /* font-size: 30px; */
-    text-align: center;
-}
-
-.home{
-    background-image: url(mandala.png);
+/* 
+.home {
+    background-image: url(../images/mandala.png);
     background-position: center;
-    /* background-size: ; */
-    background-repeat:no-repeat;
-}
-.index{
-    background-image: url(mandalaTopHalf.png);
-    left:100px ;
-    /* background-size: ; */
-    background-repeat:no-repeat;
-
-}
-.login{
-    background-image: url(mandalaBttmHalf.png);
-}
-
-h1,h2,h3,h4{
-    font-family: 'Berkshire Swash',cursive; 
-}
-p{
-    font-family: 'Oxygen',sans-serif;
-}
-.jumbotron{
-    background-color: rgba(0, 255, 255, 0.261);
-    width:1000px;
-}
-.stuff{
-    position:center;
-}
-#footer{
-    width:1200px;
-    background-color: #26a69a;
-    float: auto;
-    margin-top: 25px;
-}
-/* #silence{
-    /* width: 180px;
-    height:100px;
-    padding-left: 100px;
-    padding-top: 20px; */
-/* }
-#affirmations{
-  
+    background-repeat: no-repeat;
 } */
-/* #visualization{
-     width: 180px;
-    height:100px;
-    padding-left: 100px;
-    padding-top: 20px; 
-} */
-/* #exercise{
+
+.index {
+    background-image: url(../images/full-bloom.png);
     
-} */
-/* #read{
-     width: 180px;
-    height:100px;
-    padding-left: 100px;
-    padding-top: 20px; 
-} */
-/* #scriber{ 
-
-} */
-/* needs to be at the bottom of css pg*/
-/* need to link colors to btns */
-/* home pg */
-#morning:hover{
-    background-image:none;
-    background-color:#fff700;
-}
-#daily:hover{
-    background-image:none;
-    background-color:#ffa600;
-}
-#evening:hover{
-    background-image:none;
-    background-color:#ff0000;
-}
-/* index pg */
-#silance:hover{
-    background-image:none;
-    background-color:#a200ff;
-}
-#affirmations:hover{
-    background-image:none;
-    background-color:#0011ff;
-}
-#visualization:hover{
-    background-image:none;
-    background-color:#5aafff;
-}
-#exercise:hover{
-    background-image:none;
-    background-color:#5bbd4e;
-}
-#read:hover{
-    background-image:none;
-    background-color:#fff700;
-}
-#scribe:hover{
-    background-image:none;
-    background-color:#ff8400;
-=======
-.grid-container {
-    background-image: url();
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: auto auto auto;
-    /* background-color: rgb(197, 229, 255); */
-    padding: 10px;
-
+    
 }
 
-.grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    border: 1px outset rgba(145, 145, 145, 0.8);
-    padding: 20px;
-    /* font-size: 30px; */
-    text-align: center;
-}
-
-.home{
-    background-image: url(mandala.png);
+/* .work {
+    background-image: url(../images/mandalaBttmHalf.png);
     background-position: center;
-    /* background-size: ; */
-    background-repeat:no-repeat;
-}
-.index{
-    background-image: url(mandalaTopHalf.png);
-    left:100px ;
-    /* background-size: ; */
-    background-repeat:no-repeat;
+} */
 
-}
-.login{
-    background-image: url(mandalaBttmHalf.png);
+#menuBtns{
+    /* width: 600px; */
+    /* padding:zero; */
+    /* position: center; */
+    /* float:right; */
+    /* margin-bottom:20px; */
 }
 
-h1,h2,h3,h4{
-    font-family: 'Berkshire Swash',cursive; 
+.jumbotron {
+    /* background-color: rgba(0, 255, 255, 0.303); */
+    background-image: url(../images/mandalaTopHalf.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
-p{
-    font-family: 'Oxygen',sans-serif;
+
+.stuff {
+    position: center;
 }
-.jumbotron{
-    background-color: rgba(0, 255, 255, 0.261);
-    width:1000px;
+
+strong{
+    font-family: 'Oxygen', sans-serif;
+    color: rgb(0, 6, 175);
 }
-.stuff{
-    position:center;
+
+
+.title {
+    font-family: 'Berkshire Swash', cursive;
+    color: rgb(0, 255, 255);
 }
-#footer{
-    width:1200px;
-    background-color: #26a69a;
-    float: auto;
+
+h3,
+p,
+th,
+#info {
+    font-family: 'Oxygen', sans-serif;
+    color:rgb(68, 75, 102);
+}
+
+#lefthead,
+#righthead,
+#centerhead,
+#pointshead{
+    background-color: rgba(0, 255, 255, 0.303);
+    text-align: center;
+    font-size: 1.2em;
+}
+#box{
+    background-color: rgba(249, 249, 249, 0);
+}
+#lead {
+    font-size: 14px;
+    color: rgba(0, 255, 255, 0.364);
+}
+
+#affirmations-view{
+    border-bottom: 6px solid rgb(58, 86, 196);
+    background-color: rgba(211, 211, 211, 0.556);
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Courgette', cursive;
+}
+
+h1,
+h2,
+#title {
+    font-family: 'Berkshire Swash', cursive;
+    color: rgb(1, 31, 122);
+    /* color: rgb(167, 167, 167); */
+}
+
+#filler{
+    color: rgb(0, 6, 175);
+}
+
+#footer {
+    height: 50px;
+    width: 100%;
+    color: rgba(211, 211, 211, 0.556);
+    background-color: rgb(53, 162, 160);
+    left: 0;
     margin-top: 25px;
+    position: fixed;
 }
-/* #silance{
-    /* width: 180px;
-    height:100px;
-    padding-left: 100px;
-    padding-top: 20px; */
-/* }
-#affirmations{
-  
-} */
-/* #visualization{
-     width: 180px;
-    height:100px;
-    padding-left: 100px;
-    padding-top: 20px; 
-} */
-/* #exercise{
-    
-} */
-/* #read{
-     width: 180px;
-    height:100px;
-    padding-left: 100px;
-    padding-top: 20px; 
-} */
-/* #scriber{ 
 
+textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgba(249, 255, 189, 0) !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+/* input {
+    -webkit-appearance: textfield;
+    background-color: rgba(255, 255, 255, 0.008);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
 } */
-/* needs to be at the bottom of css pg*/
-/* need to link colors to btns */
-/* home pg */
-#morning:hover{
-    background-image:none;
-    background-color:#fff700;
-}
-#daily:hover{
-    background-image:none;
-    background-color:#ffa600;
-}
-#evening:hover{
-    background-image:none;
-    background-color:#ff0000;
-}
-/* index pg */
-#silance:hover{
-    background-image:none;
-    background-color:#a200ff;
-}
-#affirmations:hover{
-    background-image:none;
-    background-color:#0011ff;
-}
-#visualization:hover{
-    background-image:none;
-    background-color:#5aafff;
-}
-#exercise:hover{
-    background-image:none;
-    background-color:#5bbd4e;
-}
-#read:hover{
-    background-image:none;
-    background-color:#fff700;
-}
-#scribe:hover{
-    background-image:none;
-    background-color:#ff8400;
->>>>>>> 3bb70c017414e3ab559f949768cb30207438c448
-}
